@@ -74,14 +74,18 @@ $.block = function (opt) {
     };
     this.render = function () {
         //    if (status) {
-        htmlOBJ.style.marginLeft = $.offset.x + this.x + "px";
-        htmlOBJ.style.marginTop = $.offset.y + this.y + "px";
-        htmlOBJ.style.width = this.w + 'px';
-        htmlOBJ.style.height = this.h + 'px';
+      //  htmlOBJ.style.left = $.offset.x + this.x + "px";
+      //  htmlOBJ.style.top = $.offset.y + this.y + "px";
+        
+        htmlOBJ.style.transform = "translate(" + ($.offset.x + this.x) + "px," +  ($.offset.y + this.y) + "px)";
+       // htmlOBJ.style.transform = $.offset.y + this.y + "px";
+
+      //  htmlOBJ.style.width = this.w + 'px';
+      //  htmlOBJ.style.height = this.h + 'px';
         //    }
 
         // htmlOBJ.style.marginTop = this.y-$.myplayer.y + "px";
-        //  $.mainctx.fillStyle = 'rgb(255,0,0)';
-        //$.mainctx.fillRect(this.x, this.y, this.w, this.h);
+       //  $.mainctx.fillStyle = 'rgb(255,0,0)';
+      //  $.mainctx.fillRect($.offset.x + this.x, $.offset.y + this.y, this.w, this.h);
     }
 }

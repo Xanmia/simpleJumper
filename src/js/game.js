@@ -32,13 +32,13 @@ $.W = window.innerWidth;
 $.H = window.innerHeight;
 
 $.setup = function () {
-   // $.main = document.getElementById('main');
-//    $.mainctx = $.main.getContext('2d');
+    $.main = document.getElementById('main');
+    $.mainctx = $.main.getContext('2d');
 
     $.gameProgress = new $.gameLoad();
 
-  //  $.main.width = $.W;
-   // $.main.height = $.H;
+    $.main.width = $.W;
+    $.main.height = $.H;
 
     window.addEventListener('mousedown', $.mousedown);
     window.addEventListener('mousemove', $.mousemove);
@@ -141,7 +141,7 @@ $.render = function () {
  //   $.mainctx.restore();
  //   $.mainctx.save();
     //$.fxctx.clearRect(0, 0, window.innerWidth,window.innerHeight);
- //   $.mainctx.clearRect(0, 0, $.W, $.H);
+  //  $.mainctx.clearRect(0, 0, $.W, $.H);
     $.state.render();
   //  for (var i = 0; i < $.entities.length; i++) {
   //      $.entities[i].render();

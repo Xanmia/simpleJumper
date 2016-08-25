@@ -20,6 +20,8 @@ $.player = function () {
     this.currjump = 0;
 
     this.status = true;
+    this.htmlOBJ.style.marginLeft = $.W / 2 + "px";
+    this.htmlOBJ.style.marginTop = $.H / 2 - 5 + "px";
 }
 
 $.player.prototype.slowmo = function() {
@@ -172,8 +174,8 @@ $.player.prototype.checkFailure = function () {
 
 $.player.prototype.render = function () {
     //this.htmlOBJ.innerText = $.elapsed;
-    this.htmlOBJ.style.marginLeft = $.W / 2 + "px";
-    this.htmlOBJ.style.marginTop = $.H / 2 - 5 + "px";
+ ///   this.htmlOBJ.style.marginLeft = $.W / 2 + "px";
+ ///   this.htmlOBJ.style.marginTop = $.H / 2 - 5 + "px";
 
     //  this.htmlOBJ.style.marginLeft = this.x + "px";
     //  this.htmlOBJ.style.marginTop = this.y + "px";

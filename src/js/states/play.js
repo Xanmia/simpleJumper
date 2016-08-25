@@ -107,7 +107,7 @@ $.play = function (l) {
 
     this.render = function () {
         if (status) {
-            coderEnemy.render();
+        //    coderEnemy.render();
            // $.mainctx.translate($.offset.x, $.offset.y);
 
             i = blocks.length; while (i--) { blocks[i].render(); };

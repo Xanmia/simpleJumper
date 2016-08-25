@@ -33,6 +33,6 @@ $.coder = function () {
         y -= $.H/2;
     }
     
-        htmlOBJ.style.marginTop = y + "px";
+        htmlOBJ.style.top = y + "px";
     }
 }
