@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title></title>
+    <link href="style/main.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+    <div id='main' onclick="clicky();">
+
+        <canvas id='a'>a</canvas>
+        <canvas id='b'>b</canvas>
+        <canvas id='c'>c</canvas>
+    </div>
+         <div id='bob'></div>
+</body>
+    <script>
+        //window.innerWidth;
+        var loc = 0, mX = 0, mY = 0;
+        var bob = {x:100,y:100,obj:document.getElementById('bob')};
+        var width = 800;
+        var p = document.getElementById('main');
+        var a = document.getElementById('a');
+        var b = document.getElementById('b');
+        var c = document.getElementById('c');
+        window.addEventListener('mouseup', mouseup);
+        var w = window.innerWidth;
+
+        a.style.marginLeft =  (w/2) - (width/2) + 'px';
+        b.style.marginLeft =  ((w/2) - (width/2) - w) + 'px';
+        c.style.marginLeft =  ((w/2) - (width/2) - (w*2)) + 'px';
+   
+         window.requestAnimationFrame(update);
+
+        function update(){
+            window.requestAnimationFrame(update);
+            var goto = pointToPoint(bob,{x:mX,y:mY});
+            bob.x+=goto.x;
+            bob.y+=goto.y;
+            bob.obj.style.marginLeft = bob.x + 'px';
+            bob.obj.style.marginTop = bob.y + 'px';
+            if(bob.x<30){
+                flip();
+                bob.x = w+10;
+            }
+        }
+
+
+        function flip(){
+            loc += w;
+            if(loc >= w*3)
+            {
+               loc =0
+            }
+            p.style.marginLeft = loc + 'px';
+        }
+
+        function pointToPoint(p1,p2){
+	        var cDir = Math.atan2((p1.x - p2.x), (p1.y - p2.y) );
+
+	        return { x: Math.sin( (Math.PI) + cDir), y: Math.cos( (Math.PI) + cDir) } 
+        }
+
+        function mouseup(e){
+            mX = e.pageX;
+	        mY = e.pageY;
+        }
+
+    </script>
+</html>
