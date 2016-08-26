@@ -107,17 +107,17 @@ $.create = function () {
 
     this.render = function () {
         if(this.selected){
-            widthIncrease.style.marginLeft = (this.selected.x + this.selected.w) + 'px';
-            widthIncrease.style.marginTop = this.selected.y + (this.selected.h/3) + 'px'; 
+            widthIncrease.style.left = (this.selected.x + this.selected.w) + 'px';
+            widthIncrease.style.top = this.selected.y + (this.selected.h/3) + 'px'; 
             
-            heightIncrease.style.marginLeft = (this.selected.x + (this.selected.w/2)) + 'px';
-            heightIncrease.style.marginTop = this.selected.y - 50 + 'px'; 
+            heightIncrease.style.left = (this.selected.x + (this.selected.w/2)) + 'px';
+            heightIncrease.style.top = this.selected.y - 50 + 'px'; 
 
-            widthD.style.marginLeft = (this.selected.x-20) + 'px';
-            widthD.style.marginTop = this.selected.y + (this.selected.h/3) + 'px'; 
+            widthD.style.left = (this.selected.x-20) + 'px';
+            widthD.style.top = this.selected.y + (this.selected.h/3) + 'px'; 
             
-            heightD.style.marginLeft = (this.selected.x + (this.selected.w/2)) + 'px';
-            heightD.style.marginTop = this.selected.y + this.selected.h + 'px'; 
+            heightD.style.left = (this.selected.x + (this.selected.w/2)) + 'px';
+            heightD.style.top = this.selected.y + this.selected.h + 'px'; 
         }
 
       //  $.mainctx.translate($.offset.x, $.offset.y);

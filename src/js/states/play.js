@@ -1,6 +1,5 @@
 $.play = function (l) {
     var customContainer = document.getElementById('my-gui-container');
-
     var selecter = new $.select();
     var timer = document.getElementById('timer');
     $.myplayer = new $.player();
@@ -97,7 +96,7 @@ $.play = function (l) {
 
     this.update = function () {
         if (status) {
-            timer.innerText = $.elapsed.toFixed(2);
+            timer.innerHTML = $.elapsed.toFixed(2);
             $.myplayer.update(blocks);
             $.offset = { x: -($.myplayer.x - ($.W / 2)), y: -($.myplayer.y - ($.H / 2)) };
         }
@@ -107,7 +106,7 @@ $.play = function (l) {
 
     this.render = function () {
         if (status) {
-        //    coderEnemy.render();
+            coderEnemy.render();
            // $.mainctx.translate($.offset.x, $.offset.y);
 
             i = blocks.length; while (i--) { blocks[i].render(); };

@@ -10,6 +10,7 @@ $.behavior = {
 //$.blockType = { bounce: function(){$.blockBehaviors.bounce();}, finish: $.blockBehaviors.stick };
 
 $.block = function (opt) {
+    var lastMove = {x:0,y:0};
     //var type = opt || $.blockBehaviors[0];
     for (var e in $.blockBehaviors[$.blocks[opt.t].id]) {
         this[e] = $.blockBehaviors[$.blocks[opt.t].id][e];
@@ -40,6 +41,7 @@ $.block = function (opt) {
     htmlOBJ.style.height = this.h + 'px';
     //  htmlOBJ.innerText = "bounce";
     container.appendChild(htmlOBJ);
+
 
     this.kill = function () {
         container.removeChild(htmlOBJ);
@@ -77,11 +79,18 @@ $.block = function (opt) {
       //  htmlOBJ.style.left = $.offset.x + this.x + "px";
       //  htmlOBJ.style.top = $.offset.y + this.y + "px";
         
-        htmlOBJ.style.transform = "translate(" + ($.offset.x + this.x) + "px," +  ($.offset.y + this.y) + "px)";
+     // if (lastMove.x!=$.offset.x||lastMove.y != $.offset.y){ ///saving frames when you don't move'
+           htmlOBJ.style.transform = "translate(" + ($.offset.x + this.x) + "px," +  ($.offset.y + this.y) + "px)";
+     // }
+     // lastMove = $.offset;
+      
        // htmlOBJ.style.transform = $.offset.y + this.y + "px";
 
-      //  htmlOBJ.style.width = this.w + 'px';
-      //  htmlOBJ.style.height = this.h + 'px';
+       if ($.state instanceof $.create){
+            htmlOBJ.style.width = this.w + 'px';
+            htmlOBJ.style.height = this.h + 'px';
+       }
+
         //    }
 
         // htmlOBJ.style.marginTop = this.y-$.myplayer.y + "px";
